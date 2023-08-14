@@ -1,7 +1,8 @@
 package com.betrybe.sistemadevotacao;
 
 public abstract class Pessoa {
-  private String nome;
+
+  protected String nome;
 
   public String getNome() {
     return nome;

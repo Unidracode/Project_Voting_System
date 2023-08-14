@@ -6,14 +6,13 @@ public class PessoaCandidata extends Pessoa {
   private int votos;
 
   public PessoaCandidata(String nome, int numero) {
-    super(nome);
-
+    super.setNome(nome);
     this.numero = numero;
     this.votos = 0;
   }
 
   public int getNumero() {
-    return this.numero;
+    return numero;
   }
 
   public void setNumero(int numero) {
@@ -21,7 +20,7 @@ public class PessoaCandidata extends Pessoa {
   }
 
   public int getVotos() {
-    return this.votos;
+    return votos;
   }
 
   public void setVotos(int votos) {
@@ -29,6 +28,6 @@ public class PessoaCandidata extends Pessoa {
   }
 
   public void receberVoto() {
-    this.votos += 1;
+    this.votos++;
   }
 }
