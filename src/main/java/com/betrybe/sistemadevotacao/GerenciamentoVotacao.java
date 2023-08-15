@@ -35,7 +35,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora pessoa : pessoasEleitoras) {
       if (pessoa.getCpf() == cpf) {
-        System.out.println("Pesoa eleitora já cadastrada!");
+        System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
     }
