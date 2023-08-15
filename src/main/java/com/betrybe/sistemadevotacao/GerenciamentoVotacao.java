@@ -14,7 +14,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   private ArrayList<String> cpfsComputados = new ArrayList<String>();
 
   /**
-   * GerenciamentoVotacao.
+   * classe GerenciamentoVotacao.
    */
 
   public void cadastrarPessoaCandidata(String nome, int numero) {
