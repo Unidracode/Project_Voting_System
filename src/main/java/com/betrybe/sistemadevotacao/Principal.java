@@ -44,12 +44,12 @@ public class Principal {
         String nomeEleitora = scanner.nextLine();
         System.out.println("Entre com o CPF da pessoa eleitora:");
         int cpfEleitora = Integer.parseInt(scanner.nextLine());
-        gerenciamentoVotacao.cadastrarPessoaCandidata(nomeEleitora, cpfEleitora);
+        gerenciamentoVotacao.cadastrarPessoaEleitora(nomeEleitora, cpfEleitora);
       }
     } while (option == 1);
 
     do {
-      System.out.println("entre com o número correspondente à opção desejada:");
+      System.out.println("Entre com o número correspondente à opção desejada:");
       System.out.println("1 - Votar");
       System.out.println("2 - Resultado Parcial");
       System.out.println("3 - Finalizar Votação");
