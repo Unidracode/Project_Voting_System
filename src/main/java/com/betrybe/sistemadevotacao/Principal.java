@@ -43,7 +43,7 @@ public class Principal {
         System.out.println("Entre com o nome da pessoa eleitora:");
         String nomeEleitora = scanner.nextLine();
         System.out.println("Entre com o CPF da pessoa eleitora:");
-        int cpfEleitora = Integer.parseInt(scanner.nextLine());
+        String cpfEleitora = scanner.nextLine();
         gerenciamentoVotacao.cadastrarPessoaEleitora(nomeEleitora, cpfEleitora);
       }
     } while (option == 1);
