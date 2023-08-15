@@ -4,17 +4,22 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * GerenciamentoVotacao.
+ * requisito GerenciamentoVotacao.
  */
 
 public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
+
   private ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<PessoaCandidata>();
   private ArrayList<PessoaEleitora> pessoasEleitoras = new ArrayList<PessoaEleitora>();
   private ArrayList<String> cpfsComputados = new ArrayList<String>();
 
+  /**
+   * GerenciamentoVotacao.
+   */
+
   public void cadastrarPessoaCandidata(String nome, int numero) {
     for (PessoaCandidata pessoa : pessoasCandidatas) {
-      if (pessoa.getNumero() === numero) {
+      if (pessoa.getNumero() == numero) {
         System.out.println("Número da pessoa candidata já utilizado!");
         return;
       }
@@ -22,6 +27,10 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     PessoaCandidata newPessoa = new PessoaCandidata(nome, numero);
     pessoasCandidatas.add(newPessoa);
   }
+
+  /**
+   * GerenciamentoVotacao.
+   */
 
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora pessoa : pessoasEleitoras) {
@@ -34,7 +43,11 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     pessoasEleitoras.add(newPessoa);
   }
 
-  public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata){
+  /**
+   * GerenciamentoVotacao.
+   */
+
+  public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
     for (String cpf : cpfsComputados) {
       if (Objects.equals(cpf, cpfPessoaEleitora)) {
         System.out.println("Pessoa eleitora já votou!");
@@ -43,7 +56,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     }
 
     for (PessoaCandidata pessoa : pessoasCandidatas) {
-      if (pessoa,getNumero() == numeroPessoaCandidata) {
+      if (pessoa.getNumero() == numeroPessoaCandidata) {
         pessoa.receberVoto();
         break;
       }
@@ -51,10 +64,14 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     cpfsComputados.add(cpfPessoaEleitora);
   }
 
+  /**
+   * GerenciamentoVotacao.
+   */
+
   public void mostrarResultado() {
     int totalVotos = cpfsComputados.size();
 
-    if(totalVotos == 0) {
+    if (totalVotos == 0) {
       System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
       return;
     }
@@ -63,7 +80,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       double votesPercentage = ((double) votesReceived / totalVotos) * 100;
       int votosContados = (int) Math.round(votesPercentage);
 
-      System.out.printf("Nome: %s - %s votos ( %s%% )", pessoa.getNome(), votesReceived, votosContados);
+      System.out.printf("Nome: %s - %s votos ( %s%% )", pessoa.getNome(), votesReceived,
+          votosContados);
     }
     System.out.println("Total de votos: " + totalVotos);
   }
